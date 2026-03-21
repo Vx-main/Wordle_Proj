@@ -12,7 +12,6 @@ function App() {
   const [guess, setGuess] = useState(0);
   const [boardArr, setBArr] = useState([]);
   const [isDone, setDone] = useState(false);
-  console.log(wordOfDay);
 
   return (
     <>
@@ -29,7 +28,14 @@ function App() {
             isDone={isDone}
             setDone={setDone}
           />
-          {isDone && alert("Done")}
+          <p className="visually-hidden">
+            {isDone &&
+              setTimeout(() => {
+                alert("Legendry Achieved. Puzzle completed");
+                clearTimeout();
+                setDone(false);
+              }, 2000)}
+          </p>
         </div>
       </div>
     </>

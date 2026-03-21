@@ -96,3 +96,6 @@
 
     }
 }
+.visually-hidden{
+  font-size: 0px;
+}

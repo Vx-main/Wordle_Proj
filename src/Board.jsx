@@ -3,7 +3,6 @@ export function GuessBoard({ glen, arrr }) {
   for (let i = 0; i < glen; i++) {
     sNum[i] = "";
   }
-  console.log(arrr);
   return (
     <div className="guess-results">
       {sNum.map((val, index) => {
