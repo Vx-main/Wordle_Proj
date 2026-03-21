@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}html {
+  overflow-y: scroll;
+
+  --game-spacing: 32px;
+  --header-height: 4rem;
+
+  --color-success: hsl(150deg 70% 30%);
+  --color-warning: hsl(50deg 100% 30%);
+  --color-error: hsl(0deg 70% 45%);
+  --color-gray-100: hsl(0deg 0% 10%);
+  --color-gray-300: hsl(0deg 0% 25%);
+  --color-gray-500: hsl(0deg 0% 50%);
+  --color-gray-700: hsl(0deg 0% 75%);
+  --color-gray-900: hsl(0deg 0% 90%);
+}
+.game-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--game-spacing);
+  padding: var(--game-spacing) 32px;
+  margin: 0 auto;
+  min-width: 250px;
+  max-width: min(500px, 58vh, 100%);
+}
+.guess-results {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guess {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.cell {
+  position: relative;
+  width: 20%;
+  display: grid;
+  place-content: center;
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--color-gray-700);
+  border-radius: var(--radius);
+  font-size: 2rem;
+}
+/*
+  Round the corners for the 4 cells at the very corners of
+  the game board
+*/
+.guess:first-of-type .cell:first-of-type {
+  --radius: 4px 0px 0px 0px;
+}
+.guess:first-of-type .cell:last-of-type {
+  --radius: 0px 4px 0px 0px;
+}
+.guess:last-of-type .cell:last-of-type {
+  --radius: 0px 0px 4px 0px;
+}
+.guess:last-of-type .cell:first-of-type {
+  --radius: 0px 0px 0px 4px;
+}
+
+.cell.correct {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+.cell.incorrect {
+  background: var(--color-gray-300);
+  border-color: var(--color-gray-300);
+  color: white;
+}
+.cell.misplaced {
+  background: var(--color-warning);
+  border-color: var(--color-warning);
+  color: white;
+}
+.input-form{
+
+    border: 3px solid blue;
+    padding: 3px;
+    width: 250px;
+    border-radius: 5px;
+    input{
+        line-height: 2px;
+        border: 3px sold black;
+        width: 240px;
+        height: 30px;
+        border-radius: 5px;
+
+    }
+}
