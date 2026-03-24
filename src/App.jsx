@@ -34,7 +34,7 @@ function App() {
                 alert("Legendry Achieved. Puzzle completed");
                 clearTimeout();
                 setDone(false);
-              }, 2000)}
+              }, 1500)}
           </p>
         </div>
       </div>
